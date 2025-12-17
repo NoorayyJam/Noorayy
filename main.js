@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (whatsappButton) {
         whatsappButton.addEventListener('click', function() {
             // Replace with actual WhatsApp number
-            window.open('https://wa.me/03004159733?text=Hi! I\'m interested in a free website review for my business.', '_blank');
+            window.open('https://wa.me/+923004159733?text=Hi! I\'m interested in a free website review for my business.', '_blank');
         });
     }
 
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (heroCtaButton) {
         heroCtaButton.addEventListener('click', function() {
             // Same as WhatsApp button
-            window.open('https://wa.me/03004159733?text=Hi! I\'m interested in a free website review for my business.', '_blank');
+            window.open('https://wa.me/+923004159733?text=Hi! I\'m interested in a free website review for my business.', '_blank');
         });
     }
 
