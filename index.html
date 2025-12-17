@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,12 @@
     <title>Noorayy Portfolio</title>
     <meta name="description" content="I design mobile-friendly websites for local businesses, cafes, and travel agencies. Get a free website review today.">
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#14213D id="theme-color-meta">
+
     <script>
         tailwind.config = {
             theme: {
@@ -78,7 +84,9 @@
         .mobile-menu-backdrop {
             backdrop-filter: blur(4px);
         }
-        
+#mobile-menu.mobile-menu-open {
+  transform: translateX(0);
+}
         @media (max-width: 768px) {
             .hero-text {
                 font-size: 2rem;
@@ -88,16 +96,15 @@
     </style>
 </head>
 <body class="bg-white text-gray-900">
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
+    
+    <nav class="fixed top-0 left-0 right-0 bg-white backdrop-blur-sm border-b border-gray-100 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Logo/Name -->
+                
                 <div class="flex-shrink-0">
-                    <h1 class="text-xl font-bold text-[#14213D]">Noor fatima</h1>
+                    <h1 class="text-xl font-bold text-[#14213D]">NOORAYY</h1>
                 </div>
                 
-                <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#services" class="nav-link text-gray-600 hover:text-accent px-3 py-2 text-sm font-medium">SERVICES</a>
@@ -107,7 +114,6 @@
                     </div>
                 </div>
                 
-                <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600 hover:text-accent">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,8 +124,7 @@
             </div>
         </div>
         
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="md:hidden fixed top-16 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40">
+        <div id="mobile-menu" class="md:hidden absolute top-full right-0 h-auto w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="#services" class="nav-link block px-3 py-2 text-base font-medium text-gray-600 hover:text-accent">Services</a>
                 <a href="#portfolio" class="nav-link block px-3 py-2 text-base font-medium text-gray-600 hover:text-accent">Portfolio</a>
@@ -128,9 +133,8 @@
             </div>
         </div>
         
-        <!-- Mobile Menu Backdrop -->
-        <div id="mobile-menu-backdrop" class="mobile-menu-backdrop fixed inset-0 bg-black bg-opacity-20 hidden z-30"></div>
     </nav>
+     <div id="mobile-menu-backdrop" class="height-auto absolute inset-0 bg-black bg-opacity-20 hidden z-1000"></div>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-bg pt-16 pb-20">
@@ -138,7 +142,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-on-scroll">
                     <h1 class="hero-text text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                        I design <span class="text-[#14213D]">mobile-friendly websites</span> for local businesses
+                      <br><br>  I design <span class="text-[#14213D]">mobile-friendly websites</span> for local businesses
                     </h1>
                     <p class="text-xl text-gray-600 mb-8 leading-relaxed">
                         Websites & branding for cafes, travel agencies, and small businesses
@@ -347,4 +351,4 @@
     <!-- JavaScript -->
     <script src="main.js"></script>
 </body>
-</html>
+    </html>
