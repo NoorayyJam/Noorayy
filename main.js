@@ -99,23 +99,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Portfolio carousel
     const portfolioCarousel = document.getElementById('portfolio-carousel');
     if (portfolioCarousel) {
-        new Splide(portfolioCarousel, {
-            type: 'loop',
-            perPage: 1,
-            perMove: 1,
-            gap: '2rem',
-            autoplay: true,
-            interval: 5000,
-            pauseOnHover: true,
-            arrows: true,
-            pagination: true,
-            breakpoints: {
-                768: {
-                    perPage: 1,
-                    gap: '1rem'
-                }
-            }
-        }).mount();
+       new Splide('#portfolio-carousel', {
+  type: 'loop',
+  perPage: 1,
+  gap: '1.5rem',
+  pagination: true,
+  arrows: true,
+  breakpoints: {
+    768: {
+      arrows: false,
+      pagination: true,
+    }
+  }
+}).mount();
+
     }
 
     // Contact button interactions
