@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noorayy Portfolio</title>
+    <meta name="description" content="I design mobile-friendly websites for local businesses, cafes, and travel agencies. Get a free website review today.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#14213D">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent': '#14213D',
+                        'accent-hover': '#1f2e5a',
+                        'gray-50': '#F9FAFB',
+                        'gray-900': '#111827'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+        
+        .text-accent {
+            color: #14213D;
+        }
+        
+        .bg-accent {
+            background-color: #14213D;
+        }
+        
+        .bg-accent-hover:hover {
+            background-color: #1f2e5a;
+        }
+        
+        .border-accent {
+            border-color: #14213D;
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 10px 25px rgba(124, 62, 44, 0.1);
+        }
+        
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-menu-backdrop {
+            backdrop-filter: blur(4px);
+        }
+ 
+#mobile-menu.mobile-menu-open {
+  transform: translateX(0);
+}
+        @media (max-width: 768px) {
+            .hero-text {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+          
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+    
+    <nav class="fixed top-0 left-0 right-0 bg-white backdrop-blur-sm border-b border-gray-100 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-[#14213D]">NOORAYY</h1>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#services" class="nav-link text-gray-600 hover:text-accent px-3 py-2 text-sm font-medium">SERVICES</a>
+                        <a href="#portfolio" class="nav-link text-gray-600 hover:text-accent px-3 py-2 text-sm font-medium">PORTFOLIO</a>
+                        <a href="#why-me" class="nav-link text-gray-600 hover:text-accent px-3 py-2 text-sm font-medium">WHY ME</a>
+                        <a href="#contact" class="nav-link text-gray-600 hover:text-accent px-3 py-2 text-sm font-medium">CONTACT</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-accent">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="md:hidden absolute top-full right-0 h-auto w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#services" class="nav-link block px-3 py-2 text-base font-medium text-gray-600 hover:text-accent">Services</a>
+                <a href="#portfolio" class="nav-link block px-3 py-2 text-base font-medium text-gray-600 hover:text-accent">Portfolio</a>
+                <a href="#why-me" class="nav-link block px-3 py-2 text-base font-medium text-gray-600 hover:text-accent">Why Me</a>
+                <a href="#contact" class="nav-link block px-3 py-2 text-base font-medium text-gray-600 hover:text-accent">Contact</a>
+            </div>
+        </div>
+        
+    </nav>
+     <div id="mobile-menu-backdrop" class="height-auto absolute inset-0 bg-black bg-opacity-20 hidden z-40"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg pt-16 pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll">
+                   <h1 class="hero-text mt-10 text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+  I design <span class="text-[#14213D]">mobile-friendly websites</span> for local businesses
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Websites & branding for cafes, travel agencies, and small services
+                    </p>
+                    <button id="hero-cta-btn" class="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 transform hover:scale-105">
+                        Get a free website review
+                    </button>
+                </div>
+                <div class="animate-on-scroll">
+                    <img src="img/hero-workspace.png" alt="Professional web design workspace" class="w-full h-auto rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Services</h2>
+                <p class="text-xl text-gray-600">Professional web design solutions for small businesses and startups</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Landing Pages</h3>
+                    <p class="text-gray-600 leading-relaxed">One-page websites designed to get calls, bookings, or messages.</p>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Business Websites</h3>
+                    <p class="text-gray-600 leading-relaxed">Professional websites that help small businesses look trustworthy online.</p>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md animate-on-scroll">
+                    <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v6a2 2 0 002 2h4a2 2 0 002-2V5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Logo & Branding</h3>
+                    <p class="text-gray-600 leading-relaxed">Simple logos and social media visuals to make your brand recognizable. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Projects Section -->
+<section id="portfolio" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+      <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Concept Projects</h2>
+                <p class="text-xl text-gray-600">Selected Concept Projects to show my skills in web & branding</p>
+            </div>
+         
+    <!-- Projects Grid -->
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Project 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+        <img
+          src="img/arctic screenshot.png"
+          alt="Arctic Travels website"
+          class="w-full h-[200px]"
+        >
+
+        <div class="p-6">
+         <h3 class="text-xl font-semibold text-gray-900">
+            Arctic Travels
+          </h3>
+
+          <p class="mt-2 text-sm text-gray-600">
+            Concept project · Mobile-first travel landing page focused on increase bookings and inquiries.
+          </p>
+
+          <a href="arctic.html" class="inline-block mt-4 text-accent font-semibold">
+            View case study →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+        <img
+          src="img/fairytopia screenshot.png"
+          alt="FairyTopia Coffee website"
+          class="w-full h-[200px]"
+        >
+
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900">
+            FairyTopia Coffee
+          </h3>
+
+          <p class="mt-2 text-sm text-gray-600">
+            Concept project · Cafe website focused on menu display, offers, and customer engagement.
+          </p>
+
+          <a href="fairy.html" class="inline-block mt-4 text-accent font-semibold">
+            View case study →
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+        <img
+          src="img/graphic design.png"
+          alt="Branding and graphic design work"
+          class="w-full h-[200px]"
+        >
+
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900">
+            Branding Pack
+          </h3>
+
+          <p class="mt-2 text-sm text-gray-600">
+            Concept project · Logos and social media designs created for consistent brand identity.
+          </p>
+
+          <a href="graphic.html" class="inline-block mt-4 text-accent font-semibold">
+            View case study →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- My Process Section -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        My Process
+      </h2>
+      <p class="text-lg text-gray-600">
+        How I turn ideas into clean, effective websites
+      </p>
+    </div>
+
+    <!-- Process Cards -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Step 1 -->
+      <div class="bg-gray-50 rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-gray-200">
+          <span class="text-lg font-bold text-gray-800">1</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Understand Your Business
+        </h3>
+        <p class="text-sm text-gray-600">
+          I learn about your goals, audience, and services.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="bg-gray-50 rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-gray-200">
+          <span class="text-lg font-bold text-gray-800">2</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Design Layout & Visuals
+        </h3>
+        <p class="text-sm text-gray-600">
+          <br> Clean layouts and visuals focused on clarity.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-gray-50 rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-gray-200">
+          <span class="text-lg font-bold text-gray-800">3</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Build Mobile-First Site
+        </h3>
+        <p class="text-sm text-gray-600">
+         <br> Fast, responsive websites built for all devices.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="bg-gray-50 rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-gray-200">
+          <span class="text-lg font-bold text-gray-800">4</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Review & Deliver
+        </h3>
+        <p class="text-sm text-gray-600">
+         <br> Final checks, revisions, and smooth delivery.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+   <!-- Why Work With Me -->
+<section id="why-me" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Why Work With Me
+      </h2>
+      <p class="text-lg text-gray-600">
+        What makes my approach simple and effective
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Card 1 -->
+      <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-accent/10">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Mobile-First Design
+        </h3>
+        <p class="text-sm text-gray-600">
+          Websites designed to work perfectly on phones first.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-accent/10">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Clean HTML & CSS
+        </h3>
+        <p class="text-sm text-gray-600">
+          Simple, readable code that loads fast.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-accent/10">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Fast Delivery
+        </h3>
+        <p class="text-sm text-gray-600">
+          Quick turnaround without compromising quality.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+        <div class="w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-lg bg-accent/10">
+          <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">
+          Direct Communication
+        </h3>
+        <p class="text-sm text-gray-600">
+          Clear updates and quick responses.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Need a simple website for your business?</h2>
+                <p class="text-xl text-gray-600 mb-12">Available for small business projects</p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button id="whatsapp-btn" class="bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 transform hover:scale-105 flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                        </svg>
+                        WhatsApp
+                    </button>
+                    
+                    <button id="email-btn" class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        Email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <button id="scroll-to-top" onclick="scrollToTop()" class="hidden fixed bottom-6 right-6 bg-accent hover:bg-accent-hover text-white p-3 rounded-full shadow-lg transition duration-300 z-40">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
